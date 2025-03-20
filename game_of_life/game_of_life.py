@@ -115,7 +115,7 @@ def update():
     oled.show()
             
     # This technique is not infallible, but should generally reset when things get too stable
-    if curr_living == prev_living:
+    if abs(curr_living - prev_living) < 4:
         stable_generations += 1
     else:
         prev_living = curr_living
